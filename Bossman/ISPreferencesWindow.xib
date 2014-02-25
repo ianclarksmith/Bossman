@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="ISPreferencesWindowController">
+            <connections>
+                <outlet property="quoteLabel" destination="UcF-IH-56r" id="IFF-9E-daA"/>
+                <outlet property="window" destination="A4j-Vv-IBw" id="yfp-1z-xoE"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <window title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="A4j-Vv-IBw">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
+            <windowCollectionBehavior key="collectionBehavior" moveToActiveSpace="YES"/>
+            <rect key="contentRect" x="163" y="199" width="360" height="293"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+            <view key="contentView" id="3Uo-kM-PFt">
+                <rect key="frame" x="0.0" y="0.0" width="360" height="293"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mXz-uM-Opv">
+                        <rect key="frame" x="153" y="166" width="187" height="22"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="/path/to/tmux" drawsBackground="YES" usesSingleLineMode="YES" id="qfe-dR-hJa">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="G49-A1-MLe" name="value" keyPath="values.TmuxPath" id="Nvq-EQ-Pag">
+                                <dictionary key="options">
+                                    <string key="NSNullPlaceholder">/path/to/tmux</string>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="T6Z-yr-Nhb">
+                        <rect key="frame" x="18" y="169" width="85" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Path to tmux" id="ibH-iS-bAv">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField toolTip="Commands will be run in this tmux session" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="y0S-fs-LhF">
+                        <rect key="frame" x="18" y="139" width="91" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Session Name" id="hbu-3s-T7r">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField toolTip="This command will be run at launch" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yjr-7p-bhL">
+                        <rect key="frame" x="18" y="109" width="108" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Initial Command" id="adL-jM-XlX">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="n5p-35-GoQ">
+                        <rect key="frame" x="153" y="136" width="187" height="22"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="session:window.pane" drawsBackground="YES" usesSingleLineMode="YES" id="fWS-xo-fEx">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="G49-A1-MLe" name="value" keyPath="values.TmuxSession" id="3R8-14-2rt">
+                                <dictionary key="options">
+                                    <string key="NSNullPlaceholder">session:window.pane</string>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </textField>
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dZn-9b-GAr">
+                        <rect key="frame" x="153" y="106" width="187" height="22"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="e.g. &quot;/bin/bash&quot;" drawsBackground="YES" usesSingleLineMode="YES" id="I5b-dN-o23">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="G49-A1-MLe" name="value" keyPath="values.InitCommand" id="i9e-Jq-xXv">
+                                <dictionary key="options">
+                                    <string key="NSNullPlaceholder">e.g. /bin/bash</string>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UcF-IH-56r">
+                        <rect key="frame" x="18" y="230" width="324" height="28"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="320" id="3KI-mr-jjA"/>
+                        </constraints>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Bossman just wants it done." id="sGW-O5-LMg">
+                            <font key="font" metaFont="system" size="23"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField toolTip="This command will be run after the input on ⌘-Enter" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="U3s-eN-pq7">
+                        <rect key="frame" x="18" y="79" width="58" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="⌘-Enter" id="j7S-LM-6JB">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fQh-PP-jR2">
+                        <rect key="frame" x="153" y="76" width="187" height="22"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="e.g. &quot;say task complete&quot;" drawsBackground="YES" usesSingleLineMode="YES" id="A1E-3R-NEi">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="G49-A1-MLe" name="value" keyPath="values.AlternateCommand" id="zfS-l2-6M4">
+                                <dictionary key="options">
+                                    <string key="NSNullPlaceholder">e.g. "say task complete"</string>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </textField>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zBA-tG-JiJ">
+                        <rect key="frame" x="147" y="13" width="67" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Quit" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jfH-BL-giZ">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="terminate:" target="-3" id="9Zq-Ft-wnn"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="y0S-fs-LhF" firstAttribute="centerY" secondItem="n5p-35-GoQ" secondAttribute="centerY" id="20y-r8-9mK"/>
+                    <constraint firstItem="dZn-9b-GAr" firstAttribute="top" secondItem="n5p-35-GoQ" secondAttribute="bottom" constant="8" id="23U-ZG-Ree"/>
+                    <constraint firstItem="zBA-tG-JiJ" firstAttribute="top" secondItem="fQh-PP-jR2" secondAttribute="bottom" constant="35" id="4QQ-PJ-OZM"/>
+                    <constraint firstItem="mXz-uM-Opv" firstAttribute="trailing" secondItem="UcF-IH-56r" secondAttribute="trailing" id="4cD-ka-qDY"/>
+                    <constraint firstItem="dZn-9b-GAr" firstAttribute="leading" secondItem="fQh-PP-jR2" secondAttribute="leading" id="6NL-nG-xJT"/>
+                    <constraint firstAttribute="bottom" secondItem="zBA-tG-JiJ" secondAttribute="bottom" constant="20" symbolic="YES" id="An4-Kk-Ssg"/>
+                    <constraint firstItem="y0S-fs-LhF" firstAttribute="leading" secondItem="T6Z-yr-Nhb" secondAttribute="leading" id="Bib-9w-dbz"/>
+                    <constraint firstItem="UcF-IH-56r" firstAttribute="leading" secondItem="3Uo-kM-PFt" secondAttribute="leading" constant="20" symbolic="YES" id="DI0-2o-sTc"/>
+                    <constraint firstItem="UcF-IH-56r" firstAttribute="top" secondItem="3Uo-kM-PFt" secondAttribute="top" constant="35" id="EuN-3l-xWw"/>
+                    <constraint firstItem="dZn-9b-GAr" firstAttribute="centerY" secondItem="yjr-7p-bhL" secondAttribute="centerY" id="F15-bS-Shm"/>
+                    <constraint firstItem="mXz-uM-Opv" firstAttribute="leading" secondItem="n5p-35-GoQ" secondAttribute="leading" id="FFD-BS-UQH"/>
+                    <constraint firstItem="zBA-tG-JiJ" firstAttribute="centerX" secondItem="UcF-IH-56r" secondAttribute="centerX" id="Gml-eh-mLL"/>
+                    <constraint firstItem="dZn-9b-GAr" firstAttribute="trailing" secondItem="fQh-PP-jR2" secondAttribute="trailing" id="Hri-Kz-KNM"/>
+                    <constraint firstItem="n5p-35-GoQ" firstAttribute="top" secondItem="mXz-uM-Opv" secondAttribute="bottom" constant="8" id="JNJ-4o-ZnA"/>
+                    <constraint firstItem="fQh-PP-jR2" firstAttribute="centerY" secondItem="U3s-eN-pq7" secondAttribute="centerY" id="QPV-1H-bPb"/>
+                    <constraint firstItem="mXz-uM-Opv" firstAttribute="trailing" secondItem="n5p-35-GoQ" secondAttribute="trailing" id="XyW-S7-5kL"/>
+                    <constraint firstItem="yjr-7p-bhL" firstAttribute="leading" secondItem="U3s-eN-pq7" secondAttribute="leading" id="ZL6-9F-KEM"/>
+                    <constraint firstItem="T6Z-yr-Nhb" firstAttribute="leading" secondItem="UcF-IH-56r" secondAttribute="leading" id="iNV-Iw-0Wi"/>
+                    <constraint firstAttribute="trailing" secondItem="UcF-IH-56r" secondAttribute="trailing" constant="20" symbolic="YES" id="lnL-Iq-ix4"/>
+                    <constraint firstItem="y0S-fs-LhF" firstAttribute="leading" secondItem="yjr-7p-bhL" secondAttribute="leading" id="ndq-aQ-E72"/>
+                    <constraint firstItem="n5p-35-GoQ" firstAttribute="leading" secondItem="dZn-9b-GAr" secondAttribute="leading" id="oK2-PA-S9f"/>
+                    <constraint firstItem="n5p-35-GoQ" firstAttribute="trailing" secondItem="dZn-9b-GAr" secondAttribute="trailing" id="oOc-Nm-2sd"/>
+                    <constraint firstItem="mXz-uM-Opv" firstAttribute="top" secondItem="UcF-IH-56r" secondAttribute="bottom" constant="42" id="opm-ho-Yzh"/>
+                    <constraint firstItem="fQh-PP-jR2" firstAttribute="top" secondItem="dZn-9b-GAr" secondAttribute="bottom" constant="8" id="rRf-SC-nJh"/>
+                    <constraint firstItem="T6Z-yr-Nhb" firstAttribute="centerY" secondItem="mXz-uM-Opv" secondAttribute="centerY" id="rXZ-41-Vyn"/>
+                    <constraint firstItem="zBA-tG-JiJ" firstAttribute="leading" secondItem="fQh-PP-jR2" secondAttribute="leading" id="rwI-Cu-IN5"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="delegate" destination="-2" id="low-Sc-341"/>
+            </connections>
+        </window>
+        <userDefaultsController representsSharedInstance="YES" id="G49-A1-MLe"/>
+    </objects>
+</document>
