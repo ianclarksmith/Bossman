@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="ISMenubarWindowController">
+            <connections>
+                <outlet property="commandField" destination="xW2-S4-Vbr" id="h4u-7V-lTY"/>
+                <outlet property="window" destination="uA0-8I-J1H" id="fWf-op-NrR"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <window title="Bossman" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" hidesOnDeactivate="YES" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="uA0-8I-J1H" customClass="ISWindow">
+            <rect key="contentRect" x="559" y="448" width="360" height="32"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+            <value key="minSize" type="size" width="240" height="62"/>
+            <value key="maxSize" type="size" width="960" height="62"/>
+            <view key="contentView" focusRingType="none" id="CM2-fr-O8M">
+                <rect key="frame" x="0.0" y="0.0" width="360" height="32"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xW2-S4-Vbr">
+                        <rect key="frame" x="5" y="5" width="350" height="22"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="bezel" focusRingType="none" placeholderString="Enter a command..." drawsBackground="YES" usesSingleLineMode="YES" id="oOg-pM-zmg">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <outlet property="delegate" destination="-2" id="zya-eY-383"/>
+                        </connections>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="xW2-S4-Vbr" firstAttribute="leading" secondItem="CM2-fr-O8M" secondAttribute="leading" constant="5" id="0la-Iq-RFe"/>
+                    <constraint firstItem="xW2-S4-Vbr" firstAttribute="centerY" secondItem="CM2-fr-O8M" secondAttribute="centerY" id="3Q7-vj-tGO"/>
+                    <constraint firstItem="xW2-S4-Vbr" firstAttribute="centerX" secondItem="CM2-fr-O8M" secondAttribute="centerX" id="mzh-7j-Se4"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="delegate" destination="-2" id="yxO-Lp-nia"/>
+            </connections>
+        </window>
+    </objects>
+</document>
