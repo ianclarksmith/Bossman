@@ -63,7 +63,7 @@
 - (void)clickStatusItem:(id)sender {
     NSEvent *event = [NSApp currentEvent];
     
-    if ([event modifierFlags] * NSAlternateKeyMask) {
+    if ([event modifierFlags] & NSAlternateKeyMask) {
         [self.preferencesWindowController showWindow:self];
     } else {
         [self.menubarWindowController toggleCommandWindow:sender];
