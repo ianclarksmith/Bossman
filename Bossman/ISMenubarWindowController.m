@@ -22,6 +22,13 @@
 - (void)windowDidLoad {
     [self.window setStyleMask:NSBorderlessWindowMask];
     
+    [self.commandField setDelegate:self];
+}
+
+- (void)showWindow:(id)sender {
+    [super self];
+    
+    // Re-arrange window (required for multiple displays)
     NSEvent* event = [NSApp currentEvent];
     
     // Get the frame and origin of the control of the current event
@@ -37,12 +44,6 @@
     CGPoint windowTopLeftPosition = CGPointMake(eventOrigin.x, eventOrigin.y);
     
     [self.window setFrameTopLeftPoint:windowTopLeftPosition];
-    
-    [self.commandField setDelegate:self];
-}
-
-- (void)showWindow:(id)sender {
-    [super self];
     
     // Window demands attention
     [self.window makeKeyAndOrderFront:self];
