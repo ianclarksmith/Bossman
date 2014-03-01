@@ -1,7 +1,23 @@
+# OS X
 .DS_Store
-xcuserdata
+._*
+.Spotlight-V100
+.Trashes
+
+# Xcode
 build/
-*.[oa]
-*~.nib
-*.swp
-*~
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+*.xccheckout
+profile
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
