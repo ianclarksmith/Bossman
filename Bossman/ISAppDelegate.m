@@ -23,7 +23,8 @@
                               @"/usr/local/bin/tmux", @"TmuxPath",
                               @"bossman-app", @"TmuxSession",
                               @"", @"InitCommand",
-                              @"", @"AlternateCommand", nil];
+                              @"", @"AlternateCommand",
+                              @YES, @"KillOnQuit", nil];
     
     [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
     
@@ -55,9 +56,9 @@
 }
 
 - (void)applicationWillTerminate:(NSNotification *)notification {
-    // We should ask the user if they want to kill
-    // window with yes, no, cancel...
-    [ISTmuxInterface runTmux:@[@"kill-session", @"-t", [[NSUserDefaults standardUserDefaults] objectForKey:@"TmuxSession"]]];
+    if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"KillOnQuit"] isEqualToValue:@YES]) {
+        [ISTmuxInterface runTmux:@[@"kill-session", @"-t", [[NSUserDefaults standardUserDefaults] objectForKey:@"TmuxSession"]]];
+    }
 }
 
 - (void)clickStatusItem:(id)sender {
