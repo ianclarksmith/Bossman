@@ -31,6 +31,10 @@
     // Re-arrange window (required for multiple displays)
     NSEvent* event = [NSApp currentEvent];
     
+    // Get the current screen dimensions
+    CGRect screenFrame = [[NSScreen mainScreen] frame];
+    CGSize screenSize = screenFrame.size;
+    
     // Get the frame and origin of the control of the current event
     // (= our NSStatusItem)
     CGRect eventFrame = [[event window] frame];
@@ -41,8 +45,25 @@
     // place it centered below of the status item
     CGRect windowFrame = self.window.frame;
     CGSize windowSize = windowFrame.size;
-    CGPoint windowTopLeftPosition = CGPointMake(eventOrigin.x, eventOrigin.y);
     
+    // Set window frame width to 1/4 screen width
+    windowFrame.size.width = screenSize.width / 4.f;
+    [self.window setFrame:windowFrame display:YES];
+    
+    // Calculate space remaining to the right of eventOrigin
+    CGFloat widthRemaining = screenSize.width - eventOrigin.x;
+    
+    // Decide whether window should be right or left-aligned
+    CGPoint windowTopLeftPosition;
+    if (windowSize.width > widthRemaining) {
+        // Window exceeds remaining width -> align right
+        windowTopLeftPosition = CGPointMake(eventOrigin.x + eventSize.width - windowSize.width, eventOrigin.y);
+    } else {
+        // Window fits -> align left
+        windowTopLeftPosition = CGPointMake(eventOrigin.x, eventOrigin.y);
+    }
+    
+    // Set top left corner of window
     [self.window setFrameTopLeftPoint:windowTopLeftPosition];
     
     // Window demands attention
