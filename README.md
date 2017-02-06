@@ -6,7 +6,17 @@ Bossman is a very simple menubar utility for sending things to the command line.
 
 ## Installation
 
+### Build from Source
+
 If you have tmux installed at `/usr/local/bin/tmux` then just build Bossman and run. Tmux is required, but the path can be changed in preferences.
+
+### Homebrew Cask
+
+If you prefer, you can use a [Homebrew Cask](https://caskroom.github.io) to install Bossman.  Make sure [Homebrew](http://brew.sh) is installed, and then run the following:
+
+    brew cask install bossman
+    
+If tmux is not already on your system, it will be automatically installed.
 
 ## Usage
 
